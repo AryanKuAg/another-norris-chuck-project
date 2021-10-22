@@ -5,7 +5,7 @@ const mainJokeElement = document.getElementById('joke')
 
 mainJokeButton.addEventListener('click', () => {
     mainJokeElement.innerText = 'LOADING...'
-    fetch('http://localhost:3000/joke').then((response) => {
+    fetch('/joke').then((response) => {
         response.json().then((data) => {
             mainJokeElement.innerText = data.joke
         }).catch((er) => {

@@ -8,6 +8,8 @@ const url = 'https://api.chucknorris.io/jokes/random'
 const public = path.join(__dirname + '/public')
 app.use(express.static(public))
 
+const port = process.env.PORT || '3000'
+
 app.get('/joke', (req, res) => {
     myjoke(url, (error, response) => {
 
@@ -23,6 +25,6 @@ app.get('/joke', (req, res) => {
     })
 })
 
-app.listen('3000', () => {
+app.listen(port, () => {
     console.log('The server is connected to port 3000')
 })
